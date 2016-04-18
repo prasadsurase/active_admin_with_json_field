@@ -6,3 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+users = User.create!([
+  {email: 'prasad@example.com', password: 'password', password_confirmation: 'password'},
+  {email: 'pratik@example.com', password: 'password', password_confirmation: 'password'},
+  {email: 'abhi@example.com', password: 'password', password_confirmation: 'password'}]
+)
+
+15.times do
+  Box.create(user: users.sample, dimensions:{length: rand(0..9), breadth: rand(0..9), height: rand(0..9)})
+end
