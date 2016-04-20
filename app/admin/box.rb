@@ -1,8 +1,9 @@
 ActiveAdmin.register Box do
   filter :user_email, as: :string, label: 'Tester Email'
-  #filter :length, as: :numeric, label: 'Length'
-  #filter :breadth, as: :numeric, label: 'Breadth'
-  #filter :height, as: :numeric, label: 'Height'
+  filter :length, as: :numeric, label: 'Length'
+  filter :breadth, as: :numeric, label: 'Breadth'
+  filter :height, as: :numeric, label: 'Height'
+  filter :volume, as: :numeric, label: 'Volume'
 
   controller do
     def scoped_collection
@@ -34,6 +35,7 @@ ActiveAdmin.register Box do
     column :length, label: 'Length', sortable: "dimensions->>'length'"
     column :breadth, label: 'Breadth', sortable: "dimensions->>'breadth'"
     column :height, label: 'Height', sortable: "dimensions->>'height'"
+    column :volume, label: 'Volume', sortable: true
     column :dimensions, label: 'Dimensions', sortable: false
   end
 end

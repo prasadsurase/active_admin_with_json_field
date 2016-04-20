@@ -1,5 +1,13 @@
 class Box < ActiveRecord::Base
   belongs_to :user
+
+  before_save :update_volumn
+
+  private
+
+  def update_volumn
+    self.volume = self.dimensions['length'] * self.dimensions['breadth'] * self.dimensions['height']
+  end
 =begin
   ransacker :length_equals, formatter: -> (value){
     binding.pry

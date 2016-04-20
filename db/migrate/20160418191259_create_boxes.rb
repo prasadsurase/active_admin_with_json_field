@@ -3,6 +3,7 @@ class CreateBoxes < ActiveRecord::Migration
     create_table :boxes do |t|
       t.references :user
       t.json :dimensions
+      t.integer :volume
 
       t.timestamps null: false
     end

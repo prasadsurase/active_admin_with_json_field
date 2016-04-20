@@ -6,24 +6,24 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+* ruby 2.2.2
+* rails 4.2.5
 
-ruby 2.2.2
-
-rails 4.2.5
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-replace username and password in config/database.yml with your local database credentials
-
-* Database initialization
+* Replace username and password in config/database.yml with your local database credentials. It uses postgres.
 
 ```ruby
-
 bundle exec rake db:create db:migrate db:seed --trace
-
 ```
-
 * Admin credentials are present in the seeds.rb
+
+Clone active admin and refer it in Gemfile. you can find syntax in Gemfile.
+
+* Sorting
+refer Rails.root/config/initializers/order_clause.rb
+
+* Filtering
+remove *ransacker?* from lib/active_admin/filters/formtastic_addons.rb#seems_searchable? from local active_admin repo.
+
+for more info refer 
+[Stackoverflow](http://stackoverflow.com/questions/36546815/custom-filter-on-custom-column-in-activeadmin) and 
+[ActiveAdmin](https://github.com/activeadmin/activeadmin/issues/4399)

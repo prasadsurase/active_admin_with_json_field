@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'activeadmin', github: 'activeadmin'
+#gem 'activeadmin', path: '/Users/prasad/opensource/activeadmin'
 gem 'devise'
 
 
