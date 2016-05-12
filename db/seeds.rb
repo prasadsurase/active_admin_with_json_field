@@ -13,5 +13,5 @@ users = User.create!([
 )
 
 15.times do
-  Box.create(user: users.sample, dimensions:{length: rand(0..9), breadth: rand(0..9), height: rand(0..9)})
+  Box.create(user: users.sample, dimensions:{length: rand(0..9.0).round(1), breadth: rand(0..9.0).round(1), height: rand(0..9)})
 end
